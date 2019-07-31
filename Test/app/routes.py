@@ -1,4 +1,5 @@
-from flask import render_template, url_for
+from flask import Flask, render_template, request, redirect, Response
+import random, json
 from app import app
 
 @app.route('/')

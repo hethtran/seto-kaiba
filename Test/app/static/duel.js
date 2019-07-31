@@ -12,6 +12,7 @@ var onDragStart = function(source, piece, position, orientation) {
 
 var makeRandomMove = function() {
   var possibleMoves = game.moves();
+  console.log("game");
   // game over
   if (possibleMoves.length === 0) return;
   var randomIdx = Math.floor(Math.random() * possibleMoves.length)
