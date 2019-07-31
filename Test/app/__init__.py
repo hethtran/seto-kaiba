@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, render_template, url_for
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
@@ -9,13 +9,12 @@ app = Flask(__name__)
 api = Api(app)
 
 class ChessPieces(Resource):
-    def get(self, todo_id):
-        path = '/static/images/chesspieces/wikipedia/' + todo_id
-        #print(os.path.dirname(sys.modules['__main__'].__file__))
+    def get(self, filename):
+        path = '/static/images/chesspieces/wikipedia/' + filename
         print(path)
         return path
 
-api.add_resource(ChessPieces, '/static/images/chesspieces/wikipedia/<string:todo_id>')
+api.add_resource(ChessPieces, '/images/chesspieces/wikipedia/<path:filename>')
 
 if __name__ == '__main__':
     app.run(debug=True)
