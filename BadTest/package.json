@@ -15,7 +15,7 @@
   "devDependencies": {
     "kidif": "1.1.0",
     "mustache": "2.3.0",
-    "standard": "10.0.2"
+    "standard": "17.0.0"
   },
   "scripts": {
     "test": "mocha"
